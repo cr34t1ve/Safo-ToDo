@@ -12,6 +12,13 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   @override
+  void initState() {
+    //add all original list items to temprary list
+    items.addAll(taskList);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
@@ -72,46 +79,48 @@ class _HomeState extends State<Home> {
                       width: getProportionateScreenWidth(19.0),
                     ),
                     Center(
-                      child: Container(
-                        width: getProportionateScreenWidth(195.0),
-                        height: getProportionateScreenHeight(107),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: getProportionateScreenWidth(29.0),
-                              vertical: getProportionateScreenHeight(16.0)),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '13 tasks',
-                                style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontSize: getProportionateScreenWidth(15),
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black),
-                              ),
-                              Text(
-                                'School',
-                                style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontSize: getProportionateScreenWidth(25),
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black),
-                              ),
-                              SizedBox(
-                                height: getProportionateScreenHeight(3.0),
-                              ),
-                              Container(
-                                width: getProportionateScreenWidth(86),
-                                height: getProportionateScreenHeight(6),
-                                decoration:
-                                    BoxDecoration(color: Color(0xFF3FD972)),
-                              )
-                            ],
+                      child: GestureDetector(
+                        child: Container(
+                          width: getProportionateScreenWidth(195.0),
+                          height: getProportionateScreenHeight(107),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: getProportionateScreenWidth(29.0),
+                                vertical: getProportionateScreenHeight(16.0)),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '13 tasks',
+                                  style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: getProportionateScreenWidth(15),
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black),
+                                ),
+                                Text(
+                                  'School',
+                                  style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: getProportionateScreenWidth(25),
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.black),
+                                ),
+                                SizedBox(
+                                  height: getProportionateScreenHeight(3.0),
+                                ),
+                                Container(
+                                  width: getProportionateScreenWidth(86),
+                                  height: getProportionateScreenHeight(6),
+                                  decoration:
+                                      BoxDecoration(color: Color(0xFF3FD972)),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -120,46 +129,51 @@ class _HomeState extends State<Home> {
                       width: getProportionateScreenWidth(29.0),
                     ),
                     Center(
-                      child: Container(
-                        width: getProportionateScreenWidth(195.0),
-                        height: getProportionateScreenHeight(107),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: getProportionateScreenWidth(29.0),
-                              vertical: getProportionateScreenHeight(16.0)),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '5 tasks',
-                                style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontSize: getProportionateScreenWidth(15),
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black),
-                              ),
-                              Text(
-                                'Personal',
-                                style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontSize: getProportionateScreenWidth(25),
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black),
-                              ),
-                              SizedBox(
-                                height: getProportionateScreenHeight(3.0),
-                              ),
-                              Container(
-                                width: getProportionateScreenWidth(86),
-                                height: getProportionateScreenHeight(6),
-                                decoration:
-                                    BoxDecoration(color: Color(0xFFFF5BE4)),
-                              )
-                            ],
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {});
+                        },
+                        child: Container(
+                          width: getProportionateScreenWidth(195.0),
+                          height: getProportionateScreenHeight(107),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: getProportionateScreenWidth(29.0),
+                                vertical: getProportionateScreenHeight(16.0)),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '5 tasks',
+                                  style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: getProportionateScreenWidth(15),
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black),
+                                ),
+                                Text(
+                                  'Personal',
+                                  style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: getProportionateScreenWidth(25),
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.black),
+                                ),
+                                SizedBox(
+                                  height: getProportionateScreenHeight(3.0),
+                                ),
+                                Container(
+                                  width: getProportionateScreenWidth(86),
+                                  height: getProportionateScreenHeight(6),
+                                  decoration:
+                                      BoxDecoration(color: Color(0xFFFF5BE4)),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -167,20 +181,22 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: ListView.separated(
-                  itemCount: taskList.length,
-                  shrinkWrap: true,
-                  separatorBuilder: (BuildContext context, int index) =>
-                      SizedBox(
-                    height: getProportionateScreenHeight(25),
-                  ),
-                  itemBuilder: (context, index) => TaskCard(
-                    title: taskList[index].taskName,
-                    taskColor: taskList[index].catergory == 'school'
-                        ? Color(0xFF3FD972)
-                        : Color(0xFFFF5BE4),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: ListView.separated(
+                    itemCount: taskList.length,
+                    shrinkWrap: true,
+                    separatorBuilder: (BuildContext context, int index) =>
+                        SizedBox(
+                      height: getProportionateScreenHeight(25),
+                    ),
+                    itemBuilder: (context, index) => TaskCard(
+                      title: taskList[index].taskName,
+                      taskColor: taskList[index].catergory == 'school'
+                          ? Color(0xFF3FD972)
+                          : Color(0xFFFF5BE4),
+                    ),
                   ),
                 ),
               )
@@ -191,7 +207,9 @@ class _HomeState extends State<Home> {
             right: getProportionateScreenWidth(23),
             child: GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/task');
+                Navigator.pushNamed(context, '/task')
+                    .then((_) => setState(() {}));
+                // Navigator.pushNamed(context, '/task');
               },
               child: Container(
                   height: getProportionateScreenHeight(71),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:safo_todo/list.dart';
 import 'package:safo_todo/sizeConfig.dart';
 
 class WriteTask extends StatefulWidget {
@@ -31,13 +32,18 @@ class _WriteTaskState extends State<WriteTask> {
                       fontWeight: FontWeight.w700,
                       color: Colors.black),
                 ),
-                Text(
-                  'Cancel',
-                  style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: getProportionateScreenWidth(20),
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xFF1510F0)),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    'Cancel',
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: getProportionateScreenWidth(20),
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFF1510F0)),
+                  ),
                 )
               ],
             ),
@@ -92,6 +98,12 @@ class _WriteTaskState extends State<WriteTask> {
               child: Center(
                 child: GestureDetector(
                   onTap: () {
+                    taskList.add(
+                      Tasks(
+                        catergory: catergory[0],
+                        taskName: _noteController.text,
+                      ),
+                    );
                     Navigator.pop(context);
                   },
                   child: Text(
